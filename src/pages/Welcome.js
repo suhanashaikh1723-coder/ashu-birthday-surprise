@@ -1,8 +1,14 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Welcome() {
+function Welcome({ onStartMusic }) {
   const navigate = useNavigate();
+
+  const handleStart = async () => {
+    await onStartMusic();
+    navigate("/letter");
+  };
 
   return (
     <div className="page welcome-page">
@@ -24,7 +30,7 @@ function Welcome() {
 
       <div className="big-heart">💝</div>
 
-      <button onClick={() => navigate("/letter")}>
+      <button onClick={handleStart}>
         Open Your Surprise 🎁
       </button>
 
