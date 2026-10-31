@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #170d17;
+  color: white;
+  font-family: Georgia, serif;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: appear 0.7s ease;
+}
+
+.welcome-page {
+  background: radial-gradient(circle, #54203f, #170d17 75%);
+}
+
+.subtitle {
+  color: #ff9acb;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: clamp(32px, 7vw, 55px);
+  color: #ffb4d5;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+h1 span {
+  color: #ff4fa3;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #f9dbe9;
+}
+
+.big-heart {
+  font-size: 85px;
+  margin: 25px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.hearts {
+  font-size: 27px;
+  margin-bottom: 30px;
+  animation: heartbeat 2s infinite;
+}
+
+button {
+  background: #ff4fa3;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 12px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff83bd;
+  transform: scale(1.06);
+}
+
+.footer-text {
+  color: #ff9acb;
+  margin-top: 35px;
+}
+
+.letter-card {
+  background: #35172d;
+  border: 1px solid #ff83bd;
+  border-radius: 20px;
+  padding: 30px;
+  width: min(100%, 550px);
+  margin: 25px 0;
+  box-shadow: 0 0 25px #ff4fa344;
+}
+
+.letter-card p {
+  line-height: 1.9;
+  margin: 15px 0;
+  color: #ffe4f1;
+}
+
+.letter-card h2 {
+  color: #ff9acb;
+  margin: 15px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.timer-box {
+  background: #35172d;
+  border: 1px solid #ff83bd;
+  border-radius: 15px;
+  padding: 20px 14px;
+  min-width: 100px;
+  box-shadow: 0 0 15px #ff4fa344;
+}
+
+.timer-box h2 {
+  font-size: 35px;
+  color: #ff83bd;
+}
+
+.timer-box span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.cake-display {
+  margin: 35px;
+  background: #35172d;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 0 25px #ff4fa344;
+}
+
+.candles {
+  font-size: 35px;
+}
+
+.cake-decoration {
+  font-size: 30px;
+}
+
+.cake-emoji {
+  font-size: 95px;
+}
+
+.gift-button {
+  font-size: 90px;
+  background: transparent;
+  padding: 20px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 30px 15px;
+  }
+
+  .timer-box {
+    min-width: 75px;
+    padding: 15px 8px;
+  }
+
+  .timer-box h2 {
+    font-size: 27px;
+  }
+
+  .letter-card {
+    padding: 20px;
+  }
+}
