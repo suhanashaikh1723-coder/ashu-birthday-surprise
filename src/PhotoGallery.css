@@ -1,0 +1,212 @@
+
+/* PINTEREST-INSPIRED SCRAPBOOK GALLERY */
+
+.photo-gallery {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* HEADING */
+
+.gallery-heading {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.gallery-heading span {
+  display: block;
+  font-size: 25px;
+  letter-spacing: 7px;
+  margin-bottom: 14px;
+}
+
+.gallery-heading h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 45px);
+  font-weight: 500;
+  color: #a36d91;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.gallery-heading p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: #a28a9e;
+  margin-top: 13px;
+}
+
+/* PHOTO GRID */
+
+.photo-grid {
+  width: 100%;
+  max-width: 690px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 35px;
+  padding: 12px;
+}
+
+/* POLAROID PHOTO CARDS */
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 10px 17px;
+  border-radius: 5px;
+  background: #fffdfd;
+  border: 1px solid #f5e8ef;
+  box-shadow: 0 7px 22px rgba(128, 92, 121, 0.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+  animation: photoEnter .8s ease both;
+}
+
+.photo-card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3) {
+  transform: rotate(1.5deg);
+}
+
+.photo-card:nth-child(4) {
+  transform: rotate(-1.5deg);
+}
+
+.photo-card:hover {
+  transform: rotate(0deg) translateY(-7px) scale(1.025);
+  box-shadow: 0 15px 30px rgba(128, 92, 121, 0.19);
+}
+
+/* PHOTOS */
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  border-radius: 3px;
+  transition: filter .4s ease;
+}
+
+.photo-card:hover img {
+  filter: brightness(1.04);
+}
+
+/* HEART */
+
+.photo-heart {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.85);
+  color: #d78bb7;
+  font-size: 20px;
+}
+
+/* GALLERY NOTE */
+
+.gallery-note {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  color: #ad7c9f;
+  text-align: center;
+  letter-spacing: .5px;
+  margin-top: 2px;
+}
+
+/* BUTTON */
+
+.photo-gallery .next-button {
+  display: block;
+  margin: 5px auto 0;
+  min-width: 155px;
+  padding: 13px 28px;
+  border: 1px solid #f4dce9;
+  border-radius: 30px;
+  background: linear-gradient(120deg, #dcaac8, #bda9e5);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  box-shadow: 0 7px 18px rgba(183,132,185,.2);
+  transition: all .3s ease;
+}
+
+.photo-gallery .next-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 23px rgba(183,132,185,.3);
+}
+
+/* ANIMATION */
+
+@keyframes photoEnter {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    padding: 15px 8px;
+    gap: 18px;
+  }
+
+  .photo-grid {
+    gap: 17px 13px;
+    padding: 5px;
+  }
+
+  .photo-card {
+    padding: 6px 6px 12px;
+  }
+
+  .photo-card img {
+    height: 155px;
+  }
+
+  .gallery-heading h1 {
+    font-size: 29px;
+  }
+
+  .gallery-heading p {
+    font-size: 11px;
+  }
+
+  .gallery-note {
+    font-size: 22px;
+  }
+
+  .photo-heart {
+    width: 26px;
+    height: 26px;
+    top: 11px;
+    right: 11px;
+    font-size: 17px;
+  }
+}
